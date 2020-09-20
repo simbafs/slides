@@ -1,0 +1,7 @@
+body, html, div.container {
+	height: 100vh;
+}
+
+* {
+	font-family: 'Ubuntu Mono', monospace;
+}

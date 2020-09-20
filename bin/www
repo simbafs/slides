@@ -4,7 +4,7 @@ require('@simba.fs/dotenv').init({
 });
 
 const app = require('../app');
-const debug = require('debug')('express-template:server');
+const debug = require('debug')('slides:server');
 const http = require('http');
 
 const port = normalizePort(process.env.PORT || '3000');
