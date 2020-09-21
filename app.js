@@ -14,6 +14,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use((req, res, next) => {
+	res.error = (msg, status=400) => {
+		console.error(msg);
+		return res.status(status).render('error', {
+			message: msg,
+			error: req.app.get('env') === 'development' ? new Error(msg) : {}
+		});
+	};
+	next();
+})
 
 app.use('/', require('./routes/index'));
 

@@ -4,12 +4,22 @@
 		<%- include('common/head.ejs') %>
 	</head>
 	<body>
-		<!-- main -->
-		<div class="container f-row f-align:m f-align:c">
-			<h1>Slides</h1>
-			<form action="/s" method="post">
-				
-			</form>
+		<div class="container">
+			<!-- main -->
+			<div class="f-row f-align:c f-align:m">
+				<div class="f-col:10">
+					<h1 class="u-align:c">Slides</h1>
+					<form action="/s" method="post">
+						<div class="input-grp">
+							<span class="input-append">GitHub src</span>
+							<input name="src" class="input" type="text" required>
+							<span class="input-btn">
+								<button class="btn" type="submit">GO</button>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

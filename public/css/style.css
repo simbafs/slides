@@ -1,4 +1,4 @@
-body, html, div.container {
+body, html, .container, .container>.f-row {
 	height: 100vh;
 }
 
