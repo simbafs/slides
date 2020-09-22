@@ -9,16 +9,21 @@
 		<link rel="stylesheet" href="/reveal.js/dist/reveal.css">
 		<link rel="stylesheet" href="/reveal.js/dist/theme/white.css" id="theme">
 
-		<link rel="stylesheet" href="/reveal.js/plugin/highlight/monokai.css">
+		<!-- light mode -->
+		<!-- <link rel="stylesheet" href="/reveal.js/plugin/highlight/monokai.css"> -->
+		<!-- dark mode -->
+		<link rel="stylesheet" href="/reveal.js/plugin/highlight/zenburn.css">
 	</head>
 
 	<body>
+		<!-- <p> -->
+		<!--     <%= locals.url ? locals.url : '' %> -->
+		<!-- </p> -->
 
 		<div class="reveal">
-
 			<div class="slides">
-				<section data-markdown data-separator-vertical="^\n?\n----\n?\n$" data-separator="^\n?\n---\n?\n$">
-					<%= markdown %>
+				<section data-markdown="<%= locals.url ? locals.url : '' %>" data-separator-vertical="^\n?\n----\n?\n$" data-separator="^\n?\n---\n?\n$">
+					<%= locals.markdown || '' %>
 				</section>
 			</div>
 		</div>
