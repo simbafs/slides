@@ -2,9 +2,8 @@
 <html lang="en">
 
 	<head>
-		<meta charset="utf-8">
-
-		<title>reveal.js - Markdown Example</title>
+		<%- include('common/head.ejs') %>
+		<title>Slides - slides</title>
 
 		<link rel="stylesheet" href="/reveal.js/dist/reveal.css">
 		<link rel="stylesheet" href="/reveal.js/dist/theme/white.css" id="theme">
@@ -16,9 +15,44 @@
 	</head>
 
 	<body>
-		<!-- <p> -->
-		<!--     <%= locals.url ? locals.url : '' %> -->
-		<!-- </p> -->
+		<!-- color schema picker button -->
+		<button class="u-pos:abs :circle btn btn-outline sz:xl" id="colorBtn">
+			<img src="/img/eye-dropper-solid.svg" alt="Color Picker">
+		</button>
+
+		<!-- color schema picker -->
+		<div class="modal" id="colorPicker">
+			<div class="modal_container">
+				<header class="modal_head">
+					<h3 class="modal_title">Title</h3>
+				</header>
+				<main class="modal_body">
+					<div class="modal_content">
+						<ul class="list">
+							<label class="option">
+								<input type="{checkbox / radio}" class="option_input">
+								<span class="option_obj">{文字}</span>
+							</label>
+							<li id="color/beige.css" class="colorSchema list_item">beige.css</li>
+							<li id="color/black.css" class="colorSchema list_item">black.css</li>
+							<li id="color/blood.css" class="colorSchema list_item">blood.css</li>
+							<li id="color/league.css" class="colorSchema list_item">league.css</li>
+							<li id="color/moon.css" class="colorSchema list_item">moon.css</li>
+							<li id="color/night.css" class="colorSchema list_item">night.css</li>
+							<li id="color/serif.css" class="colorSchema list_item">serif.css</li>
+							<li id="color/simple.css" class="colorSchema list_item">simple.css</li>
+							<li id="color/sky.css" class="colorSchema list_item">sky.css</li>
+							<li id="color/solarized.css" class="colorSchema list_item">solarized.css</li>
+							<li id="color/white.css" class="colorSchema list_item">white.css</li>
+						</ul>
+					</div>
+				</main>
+				<footer class="modal_foot">
+					<button class="btn" id="colorClose">Close</button>
+				</footer>
+			</div>
+		</div>
+
 
 		<div class="reveal">
 			<div class="slides">
@@ -43,6 +77,6 @@
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
-
+		<script src="/js/color.js"></script>
 	</body>
 </html>
