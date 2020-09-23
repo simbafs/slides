@@ -1,6 +1,23 @@
-<%- include('common/head.ejs') %>
-<h1><%= message %></h1>
-<% if(locals.error){ %>
-	<h2><%= error.status %></h2>
-	<pre><%= error.stack %></pre>
-<% } %>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('common/head.ejs') %>
+		<title>Slides - Error</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="f-row f-align:c f-align:m">
+				<div class="f-col:10">
+					<%- include('common/head.ejs') %>
+						<h1 class="u-align:c"><%= message %></h1>
+					<% if(locals.error){ %>
+						<hr>
+						<h2><%= error.status %></h2>
+						<pre><%= error.stack %></pre>
+					<% } %>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

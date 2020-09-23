@@ -22,4 +22,8 @@ router.get(/^\/s\/.*\/.*/, (req, res, next) => {
 		.catch(e => res.error(`Can\'t find ${url}.`))
 });
 
+router.get('/error', (req, res, next) => {
+	return res.error('Test Error');
+});
+
 module.exports = router;
