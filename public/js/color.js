@@ -1,16 +1,16 @@
-var colorBtn = document.getElementById('colorBtn');
-var colorClose = document.getElementById('colorClose');
-var colorPicker = document.getElementById('colorPicker');
-var colorSchema = document.getElementsByClassName('colorSchema');
-var colorStat = false;
+var schemaBtn = document.getElementById('schemaBtn');
+var schemaClose = document.getElementById('schemaClose');
+var schemaPicker = document.getElementById('schemaPicker');
+var schemaSchema = document.getElementsByClassName('schemaSchema');
+var schemaStat = false;
 
-colorBtn.addEventListener('click', e => {
+schemaBtn.addEventListener('click', e => {
 	console.log(e);
-	colorStat = !colorStat;
-	colorPicker.classList.toggle('is:on', colorStat);
+	schemaStat = !schemaStat;
+	schemaPicker.classList.toggle('is:on', schemaStat);
 });
 
-colorClose.addEventListener('click', e => {
-	colorStat = false;
-	colorPicker.classList.toggle('is:on', false);
+schemaClose.addEventListener('click', e => {
+	schemaStat = false;
+	schemaPicker.classList.toggle('is:on', false);
 });

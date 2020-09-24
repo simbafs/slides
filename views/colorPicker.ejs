@@ -1,34 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 	<head>
 		<%- include('common/head.ejs') %>
-		<title>Slides - slides</title>
-
-		<link rel="stylesheet" href="/reveal.js/dist/reveal.css">
-		<link id="themeCSS" rel="stylesheet" href="/reveal.js/dist/theme/white.css" id="theme">
-
-		<!-- light mode -->
-		<link rel="stylesheet" href="/reveal.js/plugin/highlight/monokai.css">
-		<!-- dark mode -->
-		<!-- <link rel="stylesheet" href="/reveal.js/plugin/highlight/zenburn.css"> -->
 	</head>
-
 	<body>
-		<!-- color schema picker button -->
-		<button class="u-pos:abs :circle btn btn-outline sz:xl" id="schemaBtn">
-			<img src="/img/eye-dropper-solid.svg" alt="Schema Picker">
-		</button>
-
 		<!-- schema picker -->
-		<div class="modal" id="schemaPicker">
+		<div class="modal is:on" id="schemaPicker">
 			<div class="modal_container">
-				<form>
-					<header class="modal_head">
-						<h3 class="modal_title">Title</h3>
-					</header>
-					<main class="modal_body">
-						<div class="modal_content">
+				<header class="modal_head">
+					<h3 class="modal_title">Title</h3>
+				</header>
+				<main class="modal_body">
+					<div class="modal_content">
+						<form>
 							<label class="option">
 								<input type="radio" name="sch" value="beige" class="option_input">
 								<span class="option_obj">beige</span>
@@ -80,15 +64,17 @@
 							</label>
 							<br>
 							<label class="option">
-								<input checked type="radio" name="sch" value="white" class="option_input">
+								<input type="radio" name="sch" value="white" class="option_input">
 								<span class="option_obj">white</span>
 							</label>
-						</div>
-					</main>
-					<footer class="modal_foot">
-						<button id="schemaClose" class="btn" type="submit">OK</button>
-					</footer>
-				</form>
+							<br>
+							<button class="btn" type="submit">OK</button>
+						</form>
+					</div>
+				</main>
+				<footer class="modal_foot">
+					<button class="btn" id="schemaClose">Close</button>
+				</footer>
 			</div>
 		</div>
 
@@ -101,33 +87,8 @@
 					if(i.checked) schema = i.value
 				}
 				console.log(schema);
-				document.getElementById('themeCSS').href = `/reveal.js/dist/theme/${schema}.css`
-			});
+			})
 		</script>
-
-		<div class="reveal">
-			<div class="slides">
-				<section data-markdown="<%= locals.url ? locals.url : '' %>" data-separator-vertical="^\n?\n----\n?\n$" data-separator="^\n?\n---\n?\n$">
-					<%= locals.markdown || '' %>
-				</section>
-			</div>
-		</div>
-
-		<script src="/reveal.js/dist/reveal.js"></script>
-		<script src="/reveal.js/plugin/markdown/markdown.js"></script>
-		<script src="/reveal.js/plugin/highlight/highlight.js"></script>
-		<script src="/reveal.js/plugin/notes/notes.js"></script>
-
-		<script>
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-		<script src="/js/color.js"></script>
 	</body>
 </html>
+

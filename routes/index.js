@@ -19,11 +19,15 @@ router.get(/^\/s\/.*\/.*/, (req, res, next) => {
 	let url = `https://raw.githubusercontent.com/${src[0]}/${src[1]}/master/${src.slice(2).join('/')}`
 	axios.head(url)
 		.then(e => 	res.render('slides', { url }))
-		.catch(e => res.error(`Can\'t find ${url}.`))
+		.catch(e => res.error(`Can\'t find ${url}`))
 });
 
 router.get('/error', (req, res, next) => {
 	return res.error('Test Error');
+});
+
+router.get('/schema', (req, res, next) => {
+	return res.render('colorPicker');
 });
 
 module.exports = router;
