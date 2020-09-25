@@ -29,11 +29,7 @@
 					</header>
 					<main class="modal_body">
 						<div class="modal_content">
-							<label class="option">
-								<input type="radio" name="sch" value="beige" class="option_input">
-								<span class="option_obj">beige</span>
-							</label>
-							<br>
+							<h6>Dark</h6>
 							<label class="option">
 								<input type="radio" name="sch" value="black" class="option_input">
 								<span class="option_obj">black</span>
@@ -57,6 +53,12 @@
 							<label class="option">
 								<input type="radio" name="sch" value="night" class="option_input">
 								<span class="option_obj">night</span>
+							</label>
+							<hr>
+							<h6>Light</h6>
+							<label class="option">
+								<input type="radio" name="sch" value="beige" class="option_input">
+								<span class="option_obj">beige</span>
 							</label>
 							<br>
 							<label class="option">
@@ -91,19 +93,6 @@
 				</form>
 			</div>
 		</div>
-
-		<script>
-			let form = document.getElementsByTagName('form')[0];
-			let schema = 'white';
-			form.addEventListener('submit', e => {
-				e.preventDefault();
-				for(let i of e.target.elements){
-					if(i.checked) schema = i.value
-				}
-				console.log(schema);
-				document.getElementById('themeCSS').href = `/reveal.js/dist/theme/${schema}.css`
-			});
-		</script>
 
 		<div class="reveal">
 			<div class="slides">
