@@ -21,7 +21,7 @@
 		</button>
 
 		<!-- schema picker -->
-		<div class="modal" id="schemaPicker">
+		<div class="modal f-row:6" id="schemaPicker">
 			<div class="modal_container">
 				<header class="modal_head">
 					<h3 class="modal_title">Title</h3>
@@ -94,13 +94,14 @@
 			</div>
 		</div>
 
-		<div class="reveal">
+		<div class="reveal" id="slides">
 			<div class="slides">
 				<section data-markdown="<%= locals.url ? locals.url : '' %>" data-separator-vertical="^\n?\n----\n?\n$" data-separator="^\n?\n---\n?\n$">
 					<%= locals.markdown || '' %>
 				</section>
 			</div>
 		</div>
+		<h1>test</h1>
 
 		<script src="/reveal.js/dist/reveal.js"></script>
 		<script src="/reveal.js/plugin/markdown/markdown.js"></script>
