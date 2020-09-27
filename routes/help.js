@@ -1,7 +1,14 @@
 const router = require('express').Router();
 
 router.get('/', (req, res, next) => {
-	res.render('help/index');
+	res.render('help');
+});
+
+router.get('/:page', (req, res, next) => {
+	return res.render('slides', {
+		url: `/help/${req.params.page}.md`,
+		origin: `https://github.com/simba-fs/slides/blob/master/help/${req.params.page}.md`
+	});
 });
 
 module.exports = router;
