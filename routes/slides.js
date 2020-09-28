@@ -12,9 +12,10 @@ router.post('/', (req, res, next) => {
 router.get(/^\/.*\/.*/, (req, res, next) => {
 	let src = req.path.split('/').slice(1);
 	// https://github.com/simba-fs/slides-test/blob/master/folder1/folder2/slides.md
-	let originUrl = `https://github.com/${src[0]}/${src[1]}/blob/master/${src.slice(2).join('/')}`
 	if(src.length <= 2) src[2] = 'README.md';
+	let originUrl = `https://github.com/${src[0]}/${src[1]}/blob/master/${src.slice(2).join('/')}`
 	let url = `https://raw.githubusercontent.com/${src[0]}/${src[1]}/master/${src.slice(2).join('/')}`
+	console.log({ url, originUrl });
 	axios.head(url)
 		.then(e => 	res.render('slides', { url, originUrl }))
 		.catch(e => res.error(`Can\'t find ${url}`))

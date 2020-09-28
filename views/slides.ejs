@@ -16,7 +16,7 @@
 
 	<body>
 		<!-- color schema picker button -->
-		<button class="u-pos:abs :circle btn btn-outline sz:xl" id="schemaBtn">
+		<button class="u-pos:abs :circle btn sz:xl" id="schemaBtn">
 			<img src="/img/eye-dropper-solid.svg" alt="Schema Picker">
 		</button>
 
@@ -94,6 +94,34 @@
 			</div>
 		</div>
 
+		<!-- info picker button -->
+		<button class="u-pos:abs u-right:0 :circle btn sz:xl" id="infoBtn">
+			<img src="/img/info-circle-solid.svg" alt="=Info">
+		</button>
+
+		<div class="modal sz:lg" id="infoBox">
+			<div class="modal_container">
+				<header class="modal_head">
+					<h3 class="modal_title">Info</h3>
+				</header>
+				<main class="modal_body">
+					<div class="modal_content">
+						<ul class="list :bordered :loose">
+							<li class="list_item">
+								<a class="link" href="<%= url %>" target="_blank">RAW markdown</a>
+							</li>
+							<li class="list_item">
+								<a class="link" href="<%= originUrl %>" target="_blank">GitHub URL</a>
+							</li>
+						</ul>
+					</div>
+				</main>
+				<footer class="modal_btn-grp">
+					<button class="btn clr:primary" id="infoClose">Ok</button>
+				</footer>
+			</div>
+		</div>
+
 		<div class="reveal" id="slides">
 			<div class="slides">
 				<section data-markdown="<%= locals.url ? locals.url : '' %>" data-separator-vertical="^\n?\n----\n?\n$" data-separator="^\n?\n---\n?\n$">
@@ -118,6 +146,6 @@
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
-		<script src="/js/color.js"></script>
+		<script src="/js/slides.js"></script>
 	</body>
 </html>

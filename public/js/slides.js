@@ -1,3 +1,4 @@
+// theme picker
 var schema = (() => {
 	var schemaBtn = document.getElementById('schemaBtn');
 	var schemaClose = document.getElementById('schemaClose');
@@ -51,4 +52,17 @@ var schema = (() => {
 	});
 
 	return schemaToggle;
+})();
+
+// info button
+var infoToggle = (() => {
+	var infoBtn = document.getElementById('infoBtn');
+	var infoBox = document.getElementById('infoBox');
+	var infoClose = document.getElementById('infoClose');
+	var infoToggle = () => infoBox.classList.toggle('is:on');
+
+	infoBtn.addEventListener('click', infoToggle);
+	infoClose.addEventListener('click', infoToggle);
+
+	return infoToggle;
 })();
