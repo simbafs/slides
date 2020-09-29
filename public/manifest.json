@@ -3,7 +3,7 @@
 	"short_name": "Slides",
 	"lang": "zh-TW",
 	"start_url": "/",
-	"display": "fullscreen",
+	"display": "standalone",
 	"theme_color": "#23d386",
 	"icons": [
 		{
