@@ -20,11 +20,11 @@ var schema = (() => {
 
 	function schemaToggle(schema){
 		// change button color
-		if(dark.includes(schema)){
-			schemaBtn.children[0].style.filter =  'invert(1)';
-		}else{
-			schemaBtn.children[0].style.filter =  'invert(0)';
-		}
+		// if(dark.includes(schema)){
+		//     schemaBtn.children[0].style.filter =  'invert(1)';
+		// }else{
+		//     schemaBtn.children[0].style.filter =  'invert(0)';
+		// }
 
 		// change css file
 		document.getElementById('themeCSS').href = `/reveal.js/dist/theme/${schema}.css`
