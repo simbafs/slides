@@ -15,10 +15,22 @@
 	</head>
 
 	<body>
-		<!-- color schema picker button -->
-		<button class="u-pos:abs :circle btn sz:xl" id="schemaBtn">
-			<img src="/img/eye-dropper-solid.svg" alt="Schema Picker">
-		</button>
+		<div class="u-pos:abs">
+			<!-- color schema picker button -->
+			<button class=":circle btn sz:xl" id="schemaBtn">
+				<img src="/img/eye-dropper-solid.svg" alt="Schema Picker">
+			</button>
+
+			<!-- info picker button -->
+			<button class=":circle btn sz:xl" id="infoBtn">
+				<img src="/img/info-circle-solid.svg" alt="=Info">
+			</button>
+
+			<!-- home -->
+			<a href="/" class=":circle btn sz:xl">
+				<img src="/img/home-solid.svg" alt="Home">
+			</a>
+		</div>
 
 		<!-- schema picker -->
 		<div class="modal f-row:6" id="schemaPicker">
@@ -87,18 +99,14 @@
 							</label>
 						</div>
 					</main>
-					<footer class="modal_foot">
-						<button id="schemaClose" class="btn" type="submit">OK</button>
+					<footer class="modal_btn-grp">
+						<button id="schemaClose" class="btn clr:primary" type="submit">OK</button>
 					</footer>
 				</form>
 			</div>
 		</div>
 
-		<!-- info picker button -->
-		<button class="u-pos:abs u-right:0 :circle btn sz:xl" id="infoBtn">
-			<img src="/img/info-circle-solid.svg" alt="=Info">
-		</button>
-
+		<!-- info box -->
 		<div class="modal sz:lg" id="infoBox">
 			<div class="modal_container">
 				<header class="modal_head">
@@ -106,14 +114,18 @@
 				</header>
 				<main class="modal_body">
 					<div class="modal_content">
-						<ul class="list :bordered :loose">
-							<li class="list_item">
-								<a class="link" href="<%= url %>" target="_blank">RAW markdown</a>
-							</li>
-							<li class="list_item">
-								<a class="link" href="<%= originUrl %>" target="_blank">GitHub URL</a>
-							</li>
-						</ul>
+						<a class="link" href="<%= url %>" target="_blank">RAW markdown</a>
+						<hr>
+
+						<a class="link" href="<%= originUrl %>" target="_blank">GitHub URL</a>
+						<!-- <ul class="list :bordered :loose"> -->
+						<!--     <li class="list_item"> -->
+						<!--         <a class="link" href="<%= url %>" target="_blank">RAW markdown</a> -->
+						<!--     </li> -->
+						<!--     <li class="list_item"> -->
+						<!--         <a class="link" href="<%= originUrl %>" target="_blank">GitHub URL</a> -->
+						<!--     </li> -->
+						<!-- </ul> -->
 					</div>
 				</main>
 				<footer class="modal_btn-grp">
@@ -129,7 +141,6 @@
 				</section>
 			</div>
 		</div>
-		<h1>test</h1>
 
 		<script src="/reveal.js/dist/reveal.js"></script>
 		<script src="/reveal.js/plugin/markdown/markdown.js"></script>
