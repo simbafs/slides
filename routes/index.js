@@ -14,13 +14,8 @@ router.get('/help', (req, res, next) => {
 	return res.render('help');
 });
 
-// test route
-router.get('/error', (req, res, next) => {
-	return res.error('Test Error');
-});
-
-router.get('/schema', (req, res, next) => {
-	return res.render('colorPicker');
+router.get('/about', (req, res, next) => {
+	return res.render('about');
 });
 
 router.use('/s', require('./slides'));
