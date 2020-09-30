@@ -1,7 +1,11 @@
-body, html, .container, .container>.f-row {
+body, html, .container {
 	height: 100vh;
 }
 
 * {
 	font-family: 'Ubuntu Mono', monospace;
+}
+
+.container>.f-row {
+	height: 90%;
 }
