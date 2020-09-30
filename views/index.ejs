@@ -5,6 +5,26 @@
 	</head>
 	<body>
 		<div class="container">
+			<!-- header -->
+			<%- include('common/header.ejs') %>
+
+			<!-- first use -->
+			<div class="modal sz:lg" id="firstUse">
+				<div class="modal_container">
+					<header class="modal_head">
+						<h3 class="modal_title">First Use ?</h3>
+					</header>
+					<main class="modal_body">
+						<div class="modal_content">
+							<p>Do you first visit this <a class="link" href="https://slides.simba-fs.dev" target="_blank">Slides</a> ? Click this <a class="link" href="/h" target="_blank">link</a> to see some help message.</p>
+						</div>
+					</main>
+					<footer class="modal_btn-grp">
+						<button class="btn clr:primary" id="firstUseClose">Close</button>
+					</footer>
+				</div>
+			</div>
+
 			<!-- main -->
 			<div class="f-row f-align:c f-align:m">
 				<div class="f-col:10">
@@ -26,5 +46,7 @@
 				</div>
 			</div>
 		</div>
+
+		<script src="/js/index.js"></script>
 	</body>
 </html>

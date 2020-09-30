@@ -13,6 +13,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+// render error page function
 app.use((req, res, next) => {
 	res.error = (msg, status=400) => {
 		console.error(msg);
@@ -22,7 +23,12 @@ app.use((req, res, next) => {
 		});
 	};
 	next();
-})
+});
+// locals.path
+app.use((req, res, next) => {
+	res.locals.path = req.path.replace(/\/$/, '');
+	next();
+});
 
 // static file
 app.use(express.static(path.join(__dirname, 'public')));

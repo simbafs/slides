@@ -6,6 +6,15 @@ router.get('/', (req, res, next) => {
 	return res.render('index');
 });
 
+router.get('/license', (req, res, next) => {
+	return res.render('license');
+});
+
+router.get('/help', (req, res, next) => {
+	return res.render('help');
+});
+
+// test route
 router.get('/error', (req, res, next) => {
 	return res.error('Test Error');
 });
