@@ -10,3 +10,9 @@
 # GitHub path
 基本的 GitHhb path 是 `username/repo` ，這類的 path 會載入 README.md 當作來源
 你也可以指定檔案，只要把他加在 repo 後面，像是 `username/repo/slides.md`，這類的 path 必須指定檔名，否則會發生錯誤
+
+# Google Analystic
+如果要啟用 GA，在啟動時加上環境變數 `GA`，例如：（那個 id 是我亂掰的，填你自己的 id）
+```
+GA=UA-7458927582-2 npm start
+```

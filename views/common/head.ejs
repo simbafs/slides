@@ -1,6 +1,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/lazy4-colours.css">
 <link rel="stylesheet" href="/css/lazy4.css">
 <link rel="stylesheet" href="/css/style.css">
@@ -28,3 +28,15 @@
 <link rel="apple-touch-icon" sizes="192x192" href="/img/icon/icon-192.png">
 <link rel="icon" sizes="1024x1024" href="/img/icon/icon-1024.png">
 <link rel="apple-touch-icon" sizes="1024x1024" href="/img/icon/icon-1024.png">
+
+<% if(locals.GA){ %>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=<%= GA %>"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', '<%= GA %>');
+	</script>
+<% } %>

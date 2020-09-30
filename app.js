@@ -24,9 +24,12 @@ app.use((req, res, next) => {
 	};
 	next();
 });
-// locals.path
+// locals
 app.use((req, res, next) => {
+	// path
 	res.locals.path = req.path.replace(/\/$/, '');
+	// Google Analistic
+	if(process.env.GA) res.locals.GA = process.env.GA;
 	next();
 });
 
