@@ -116,16 +116,9 @@
 					<div class="modal_content">
 						<a class="link" href="<%= url %>" target="_blank">RAW markdown</a>
 						<hr>
-
 						<a class="link" href="<%= originUrl %>" target="_blank">GitHub URL</a>
-						<!-- <ul class="list :bordered :loose"> -->
-						<!--     <li class="list_item"> -->
-						<!--         <a class="link" href="<%= url %>" target="_blank">RAW markdown</a> -->
-						<!--     </li> -->
-						<!--     <li class="list_item"> -->
-						<!--         <a class="link" href="<%= originUrl %>" target="_blank">GitHub URL</a> -->
-						<!--     </li> -->
-						<!-- </ul> -->
+						<hr>
+						<canvas id="infoQrcode"></canvas>
 					</div>
 				</main>
 				<footer class="modal_btn-grp">
@@ -157,6 +150,8 @@
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
 		</script>
+
+		<script src="/js/qrcode.js"></script>
 		<script src="/js/slides.js"></script>
 	</body>
 </html>
