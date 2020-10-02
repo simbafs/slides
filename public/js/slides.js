@@ -59,7 +59,14 @@ var infoToggle = (() => {
 	var infoBtn = document.getElementById('infoBtn');
 	var infoBox = document.getElementById('infoBox');
 	var infoClose = document.getElementById('infoClose');
-	var infoToggle = () => infoBox.classList.toggle('is:on');
+	var infoQrcode = document.getElementById('infoQrcode');	
+	var infoToggle = () => {
+		// generate qrcode
+		QRCode.toCanvas(infoQrcode, location.href);
+
+		// open info box
+		infoBox.classList.toggle('is:on')
+	};
 
 	infoBtn.addEventListener('click', infoToggle);
 	infoClose.addEventListener('click', infoToggle);
