@@ -1,8 +1,4 @@
 #!/usr/bin/env node
-require('@simba.fs/dotenv').init({
-	PORT: 3000
-});
-
 const app = require('../app');
 const debug = require('debug')('slides:server');
 const http = require('http');
