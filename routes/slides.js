@@ -17,7 +17,7 @@ router.get(/^\/.*\/.*/, (req, res, next) => {
 	let url = `https://raw.githubusercontent.com/${src[0]}/${src[1]}/master/${src.slice(2).join('/')}`
 	console.log({ url, originUrl });
 	axios.head(url)
-		.then(e => 	res.render('slides', { url, originUrl }))
+		.then(e => 	res.render('slides', { url, originUrl, path: req.path.slice(1) }))
 		.catch(e => res.error(`Can\'t find ${url}`))
 });
 

@@ -7,7 +7,8 @@ router.get('/', (req, res, next) => {
 router.get('/:page', (req, res, next) => {
 	return res.render('slides', {
 		url: `/help/${req.params.page}.md`,
-		originUrl: `https://github.com/simba-fs/slides/blob/master/help/${req.params.page}.md`
+		originUrl: `https://github.com/simba-fs/slides/blob/master/help/${req.params.page}.md`,
+		path: `/h/${req.params.page}`
 	});
 });
 

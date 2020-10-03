@@ -17,18 +17,23 @@
 	<body>
 		<div class="u-pos:abs">
 			<!-- color schema picker button -->
-			<button class=":circle btn sz:xl" id="schemaBtn">
+			<button class=":circle btn sz:xl tooltip @bottom" data-tip="theme" id="schemaBtn">
 				<img src="/img/eye-dropper-solid.svg" alt="Schema Picker">
 			</button>
 
 			<!-- info picker button -->
-			<button class=":circle btn sz:xl" id="infoBtn">
+			<button class=":circle btn sz:xl tooltip @bottom" data-tip="info" id="infoBtn">
 				<img src="/img/info-circle-solid.svg" alt="=Info">
 			</button>
 
 			<!-- home -->
-			<a href="/" class=":circle btn sz:xl">
+			<a href="/" class=":circle btn sz:xl tooltip @bottom" data-tip="home">
 				<img src="/img/home-solid.svg" alt="Home">
+			</a>
+
+			<!-- host -->
+			<a href="/host?path=<%= path %>" class=":circle btn sz:xl tooltip @bottom" data-tip="host">
+				<img src="/img/tv-solid.svg" alt="host">
 			</a>
 		</div>
 
