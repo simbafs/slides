@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const app = require('../app');
+const app = require('../app').app;
 const debug = require('debug')('slides:server');
 const http = require('http');
 
@@ -7,6 +7,9 @@ const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 const server = http.createServer(app);
+const io = require('socket.io')(server);
+const socket = require('../app').socket;
+socket(io);
 
 server.listen(port);
 server.on('error', onError);

@@ -52,4 +52,12 @@ app.use((err, req, res, next) => {
 	res.render('error');
 });
 
-module.exports = app;
+// socket.io
+function socket(io){
+	io.on('connection', () => console.log('A new connection'));
+	require('./routes/host').socket(io);
+}
+
+
+module.exports.app = app;
+module.exports.socket = socket;

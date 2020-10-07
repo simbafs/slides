@@ -1,3 +1,11 @@
+var post = (data) => fetch('/host/check', {
+	method: 'POST', headers: {
+		'Accept': 'application/json',
+		'Content-Type': 'application/json'
+	},
+	body: JSON.stringify(data)
+});
+
 var step = (() => {
 	var toggle = [
 		document.getElementsByName('path')[0],
@@ -40,10 +48,12 @@ var step = (() => {
 		step(1);
 	}
 
+	console.log(post);
+
 	return step;
 
 	// 因為這些在手機上怪怪的所以暫時停用
-    //
+	//
 	// document.addEventListener('keydown', e => {
 	//     switch(e.key){
 	//         case 'ArrowDown':
