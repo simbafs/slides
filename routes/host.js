@@ -1,5 +1,11 @@
 const router = require('express').Router();
-let host = {};
+let host = {
+	'slides': {
+		name: 'slides',
+		path: 'simba-fs/slides-test',
+		password: ''
+	}
+};
 
 router.get('/', (req, res, next) => {
 	res.render('host');
@@ -10,8 +16,17 @@ router.post('/', (req, res, next) => {
 });
 
 router.post('/check', (req, res, next) => {
-	console.log(req.body);
-	res.json(req.body);
+	let data = {
+		path: req.body[0],
+		name: req.body[1] || req.body[0],
+		password: req.body[2]
+	}
+
+	if(host[data.name]){
+		return res.json(false);
+	}else{
+		return res.json(true);
+	}
 });
 
 function socket(io){

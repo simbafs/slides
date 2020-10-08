@@ -13,6 +13,7 @@ var step = (() => {
 		document.getElementsByName('password')[0],
 		document.getElementsByName('start')[0]
 	];
+	var form = document.getElementsByTagName('form')[0];
 	var steps = document.getElementById('step').children;
 	var nowStep = 0;
 
@@ -40,6 +41,16 @@ var step = (() => {
 	}
 
 	toggle.forEach((item, index) => item.addEventListener('focus', () => step(index)));
+	form.addEventListener('submit',function(e){
+		e.preventDefault();
+		var data = [...form.elements].reduce((a, b) => {a.push(b.value); return a}, []);
+
+		console.log(data);
+		post(data)
+			.then(data => {
+				console.log(data);
+			});
+	});
 
 	var query = location.search.slice(1).split('&').map(i => i.split('=')).reduce((a, b) => {a[b[0]] = b[1]; return a}, {});
 
