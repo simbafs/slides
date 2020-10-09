@@ -1,32 +1,36 @@
 const router = require('express').Router();
-let host = {
-	'slides': {
-		name: 'slides',
-		path: 'simba-fs/slides-test',
-		password: ''
+
+function random(len = 5){
+	let r = (lim = 10) => Math.floor(Math.random() * lim);
+	let l = len;
+	let result = '';
+	while(l--){
+		result += r();
 	}
-};
+	return result;
+}
+
+console.log(random());
+
+let host = [
+];
 
 router.get('/', (req, res, next) => {
 	res.render('host');
 });
 
 router.post('/', (req, res, next) => {
-	res.json(req.body);
+	let data = req.body;
+
+	do{
+		data.id = random();
+	}while(host.find(i => i.id === data.id));
+
+	res.redirect(`/host/${data.id}`);
 });
 
-router.post('/check', (req, res, next) => {
-	let data = {
-		path: req.body[0],
-		name: req.body[1] || req.body[0],
-		password: req.body[2]
-	}
-
-	if(host[data.name]){
-		return res.json(false);
-	}else{
-		return res.json(true);
-	}
+router.get('/:id', (req, res, next) => {
+	res.json(req.params);
 });
 
 function socket(io){
