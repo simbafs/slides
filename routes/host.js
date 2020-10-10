@@ -10,8 +10,6 @@ function random(len = 5){
 	return result;
 }
 
-console.log(random());
-
 let host = [
 ];
 
@@ -25,6 +23,9 @@ router.post('/', (req, res, next) => {
 	do{
 		data.id = random();
 	}while(host.find(i => i.id === data.id));
+	if(!data.key) data.key = random(10);
+
+	host.push(data);
 
 	res.redirect(`/host/${data.id}`);
 });

@@ -11,7 +11,7 @@ var step = (() => {
 		document.getElementsByName('path')[0],
 		document.getElementsByName('name')[0],
 		document.getElementsByName('key')[0],
-		document.getElementsByName('start')[0]
+		document.getElementsByTagName('button')[0]
 	];
 	var form = document.getElementsByTagName('form')[0];
 	var steps = document.getElementById('step').children;
