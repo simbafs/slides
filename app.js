@@ -55,7 +55,7 @@ app.use((err, req, res, next) => {
 // socket.io
 function socket(io){
 	io.on('connection', () => console.log('A new connection'));
-	require('./routes/host').socket(io);
+	require('./routes/room').socket(io);
 }
 
 

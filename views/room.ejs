@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('common/head.ejs') %>
+	</head>
+	<body>
+		<div class="container">
+			<!-- header -->
+			<%- include('common/header.ejs') %>
+
+			<!-- main -->
+			<div class="f-row f-align:c f-align:m">
+				<div class="f-col:10">
+					<form id="room" action="/room" method="post" class="f-row">
+						<div class="input-grp f-col:12">
+							<span class="input-append">ID</span>
+							<input name="id" class="input" type="text" required>
+						</div>
+						<div class="btn-grp :united f-col:12">
+							<button class="btn" type="submit">Join</button>
+							<button class="btn clr:primary" id="createBtn" type="button">Create</button>
+						</div>
+					</form>
+
+					<div id="create" class="u-dsp:n">
+						<form action="/room" method="post">
+							<div class="step :vertical :ordered" id=step>
+								<div class="step_item is:on">
+									<h5 class="step_title">GitHub Path</h5>
+									<p class="step_txt">簡報的來源</p>
+									<input 
+										class="input" 
+										name="path" 
+										type="text"
+										pattern=".*\/.*"
+										required
+									>
+								</div>
+								<div class="step_item">
+									<h5 class="step_title">Name</h5>
+									<p class="step_txt">給你的簡報一個名字吧！</p>
+									<input
+										class="input"
+										name="name"
+										type="text"
+									>
+								</div>
+								<div class="step_item">
+									<h5 class="step_title">Key</h5>
+									<p class="step_txt">你可以用這個密鑰控制會議，如果不填則會隨機產生</p>
+									<input
+										class="input"
+										name="key"
+										type="password"
+									>
+								</div>
+								<div class="step_item">
+									<h5 class="step_title">Start</h5>
+									<button
+										type="submit"
+										class="btn"
+									>開始吧！</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/js/room.js"></script>
+	</body>
+</html>

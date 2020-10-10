@@ -10,11 +10,11 @@ function random(len = 5){
 	return result;
 }
 
-let host = [
+let room = [
 ];
 
 router.get('/', (req, res, next) => {
-	res.render('host');
+	res.render('room');
 });
 
 router.post('/', (req, res, next) => {
@@ -22,12 +22,12 @@ router.post('/', (req, res, next) => {
 
 	do{
 		data.id = random();
-	}while(host.find(i => i.id === data.id));
+	}while(room.find(i => i.id === data.id));
 	if(!data.key) data.key = random(10);
 
-	host.push(data);
+	room.push(data);
 
-	res.redirect(`/host/${data.id}`);
+	res.redirect(`/room/${data.id}`);
 });
 
 router.get('/:id', (req, res, next) => {
