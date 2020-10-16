@@ -20,7 +20,7 @@ router.get('/about', (req, res, next) => {
 
 router.use('/s', require('./slides'));
 router.use('/h', require('./help'));
-router.use('/room', require('./room'));
+router.use('/', require('./room'));
 
 module.exports = router;
 

@@ -31,10 +31,12 @@
 				<img src="/img/home-solid.svg" alt="Home">
 			</a>
 
+			<% if(!locals.mode){ %>
 			<!-- host -->
-			<a href="/host?path=<%= path %>" class=":circle btn sz:xl tooltip @bottom" data-tip="host">
-				<img src="/img/tv-solid.svg" alt="host">
-			</a>
+				<a href="/room?path=<%= path %>" class=":circle btn sz:xl tooltip @bottom" data-tip="host">
+					<img src="/img/tv-solid.svg" alt="host">
+				</a>
+			<% } %>
 		</div>
 
 		<!-- schema picker -->
