@@ -10,7 +10,7 @@
 
 			<!-- main -->
 			<div class="f-row f-align:c f-align:m">
-				<form id="room" action="/room" method="post" class="f-row">
+				<form id="room" action="/room" method="get" class="f-row">
 					<h2 class="u-align:c">Join</h2>
 					<div class="input-grp f-col:12">
 						<span class="input-append">ID</span>
@@ -25,7 +25,7 @@
 
 			<div class="modal" id="create">
 				<div class="modal_container">
-					<form action="/room" method="post">
+					<form action="/host" method="post">
 						<header class="modal_head">
 							<h3 class="modal_title">Create</h3>
 						</header>
@@ -79,5 +79,6 @@
 			</div>
 		</div>
 		<script src="/js/toggle.js"></script>
+		<script src="/js/room.js"></script>
 	</body>
 </html>
