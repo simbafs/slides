@@ -14,7 +14,6 @@
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
     "qrcode": "^1.4.4",
-    "reveal.js": "^4.0.2",
-    "socket.io": "^2.3.0"
+    "reveal.js": "^4.0.2"
   }
 }
