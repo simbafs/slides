@@ -16,7 +16,7 @@ app.use(cookieParser());
 // render error page function
 app.use((req, res, next) => {
 	res.error = (msg, status=400) => {
-		console.error(msg);
+		console.error('Error:', msg);
 		return res.status(status).render('error', {
 			message: msg,
 			error: req.app.get('env') === 'development' ? new Error(msg) : {}

@@ -15,6 +15,10 @@ router.get('/room/:id', (req, res, next) => {
 // host
 var hosts = [];
 
+router.get('/host', (req, res, next) => {
+	res.send('Get /host');
+});
+
 router.post('/host', (req, res, next) => {
 	let data = {...req.body};
 
@@ -28,17 +32,35 @@ router.post('/host', (req, res, next) => {
 	if(src.length <= 2) src[2] = 'README.md';
 	let originUrl = `https://github.com/${src[0]}/${src[1]}/blob/master/${src.slice(2).join('/')}`
 	let url = `https://raw.githubusercontent.com/${src[0]}/${src[1]}/master/${src.slice(2).join('/')}`
-	axios.head(url)
-		.then(() => res.redirect(`/host/${data.id}`))
-		.catch(e => res.error(`Can\'t find ${url}`))
 
-	hosts.push(data);
-	console.log(hosts);
+	data = {
+		...data,
+		url,
+		originUrl
+	};
+
+	axios.head(url)
+		.then((e) => {
+			hosts.push(data);
+			res.redirect(`/host/${data.id}`)
+		})
+		.catch(e => res.error(`Can\'t find ${url}`))
 });
 
 router.get('/host/:id', (req, res, next) => {
 	let id = req.params.id;
-	res.json(id);
+	let data = hosts.find(i => i.id === id);
+
+	if(!data) return res.redirect('/host');
+
+	return res.json(req.cookies);
+	res.render('slides', {
+		url: data.url,
+		originUrl: data.originUrl,
+		mode: 'host'
+	});
+	
+	res.json(data);
 });
 
 module.exports = router;
