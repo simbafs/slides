@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const random = require('../lib/random');
 const axios = require('axios').create({ timeout: 10000 });
+const cookieConfig = require('../lib/cookieConfig');
 
 // room
 router.get('/room', (req, res, next) => {
@@ -42,6 +43,7 @@ router.post('/host', (req, res, next) => {
 	axios.head(url)
 		.then((e) => {
 			hosts.push(data);
+			res.cookie(data.id, data.key, cookieConfig);
 			res.redirect(`/host/${data.id}`)
 		})
 		.catch(e => res.error(`Can\'t find ${url}`))
@@ -53,7 +55,6 @@ router.get('/host/:id', (req, res, next) => {
 
 	if(!data) return res.redirect('/host');
 
-	return res.json(req.cookies);
 	res.render('slides', {
 		url: data.url,
 		originUrl: data.originUrl,
