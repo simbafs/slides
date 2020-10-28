@@ -9,15 +9,6 @@ var step = (() => {
 	var steps = document.getElementById('createStep').children;
 	var nowStep = 0;
 
-	// form.addEventListener('submit', function(e){
-	//     let values = [...this.elements].slice(0, 3).map(i => i.value);
-	//     Cookies.set(values[1], {
-	//         path: values[0],
-	//         name: values[1],
-	//         key: values[2]
-	//     }, {secure: true, sameSite: 'strict'});
-	// });
-
 	function step(n){
 		// check n
 		if(n > 3 || n < 0) return;

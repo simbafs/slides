@@ -54,6 +54,7 @@ router.get('/host/:id', (req, res, next) => {
 	let data = hosts.find(i => i.id === id);
 
 	if(!data) return res.redirect('/host');
+	if(data.key !== req.signedCookies[data.id]) return res.error('Key is not match');
 
 	res.render('slides', {
 		url: data.url,

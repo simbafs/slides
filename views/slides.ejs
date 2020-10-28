@@ -154,5 +154,8 @@
 
 		<script src="/js/qrcode.js"></script>
 		<script src="/js/slides.js"></script>
+		<% if(locals.mode === 'host'){ %>
+			<script src="/js/hosts.js"></script>
+		<% } %>
 	</body>
 </html>
