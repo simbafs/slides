@@ -7,6 +7,8 @@ const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 const server = http.createServer(app);
+const io = require('socket.io')(server);
+require('../routes/room.socket.io.js')(io);
 
 server.listen(port);
 server.on('error', onError);
