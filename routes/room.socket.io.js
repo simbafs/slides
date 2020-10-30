@@ -1,8 +1,15 @@
 module.exports = (io) => {
-	io.of(/\/\d+/).on('connection', (socket) => {
-		console.log(`SocketL a new connection of ${socket.nsp.name}`);
+	io.on('connection', (socket) => {
+		let id;
+		console.log(`SocketL a new connection`);
 
 		socket.emit('hello');
-		socket.on('hostChange');
+
+		socket.on('id', e => {
+			id = e;
+			socket.join(e);
+		});
+
+		socket.on('hostChange', data => io.to(id).emit('changePage', data));
 	});
 };
