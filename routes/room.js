@@ -18,6 +18,7 @@ router.get('/room/:id', (req, res, next) => {
 	return res.render('slides', {
 		url: data.url,
 		originUrl: data.originUrl,
+		id,
 		mode: 'audience'
 	});
 });
