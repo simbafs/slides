@@ -30,6 +30,12 @@
 			<a href="/" class=":circle btn sz:xl">
 				<img src="/img/home-solid.svg" alt="home">
 			</a>
+
+			<% if(locals.id){ %>
+				<button class="btn-text sz:xl" data-copy="#id">
+					<h6 class="sz:xl u-text-wrap:nw">ID: <span id="id"><%= id %></span></h6>
+				</button>
+			<% } %>
 		</div>
 
 		<!-- schema picker -->
@@ -153,6 +159,7 @@
 
 		<script src="/js/qrcode.js"></script>
 		<script src="/js/slides.js"></script>
+		<script src="/js/copy.js"></script>
 		<% if(locals.mode === 'host'){ %>
 			<script src="/js/socket.io.js"></script>
 			<script src="/js/cookie.js"></script>

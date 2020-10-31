@@ -66,6 +66,7 @@ router.get('/host/:id', (req, res, next) => {
 	if(data.key !== req.cookies[data.id]) return res.error('Key is not match');
 
 	return res.render('slides', {
+		id,
 		url: data.url,
 		originUrl: data.originUrl,
 		mode: 'host'
