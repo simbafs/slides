@@ -28,9 +28,8 @@
 
 			<!-- home -->
 			<a href="/" class=":circle btn sz:xl">
-				<img src="/img/home-solid.svg" alt="Home">
+				<img src="/img/home-solid.svg" alt="home">
 			</a>
-			<%= locals.mode %>
 		</div>
 
 		<!-- schema picker -->
@@ -158,6 +157,9 @@
 			<script src="/js/socket.io.js"></script>
 			<script src="/js/cookie.js"></script>
 			<script src="/js/hosts.js"></script>
+		<% }else if(locals.mode === 'audience'){ %>
+			<script src="/js/socket.io.js"></script>
+			<script src="/js/audience.js"></script>
 		<% } %>
 	</body>
 </html>

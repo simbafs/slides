@@ -1,6 +1,9 @@
 <ul class="nav">
 	<li class="nav_col">
-		<a id="asdf" href="/" class="nav_item <%= (path === "" ? 'is:on' : '') %>">Home</a>
+		<a href="/" class="nav_item <%= (path === "" ? 'is:on' : '') %>">Home</a>
+	</li>
+	<li class="nav_col">
+		<a href="/room" class="nav_item <%= (path === "/room" ? 'is:on' : '') %>">Room</a>
 	</li>
 	<li class="nav_col">
 		<a href="/help" class="nav_item <%= (path === "/h" || path === '/help' ? 'is:on' : '') %>">Help</a>

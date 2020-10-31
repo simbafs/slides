@@ -6,7 +6,6 @@
 	var socket = io();
 
 	socket.on('hello', () => console.log('hello'));
-	socket.on('changePage', console.log);
 	socket.on('msg', console.log);
 
 

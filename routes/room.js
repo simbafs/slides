@@ -5,12 +5,21 @@ const cookieConfig = require('../lib/cookieConfig');
 
 // room
 router.get('/room', (req, res, next) => {
-	if(req.query.id) res.redirect(`/room/${req.query.id}`);
-	res.render('room');
+	if(req.query.id) return res.redirect(`/room/${req.query.id}`);
+	return res.render('room');
 });
 
 router.get('/room/:id', (req, res, next) => {
-	res.render('room');
+	let id = req.params.id;
+	let data = hosts.find(i => i.id === id);
+
+	if(!data) return res.redirect('/room');
+
+	return res.render('slides', {
+		url: data.url,
+		originUrl: data.originUrl,
+		mode: 'audience'
+	});
 });
 
 // host
@@ -56,13 +65,11 @@ router.get('/host/:id', (req, res, next) => {
 	if(!data) return res.redirect('/host');
 	if(data.key !== req.cookies[data.id]) return res.error('Key is not match');
 
-	res.render('slides', {
+	return res.render('slides', {
 		url: data.url,
 		originUrl: data.originUrl,
 		mode: 'host'
 	});
-	
-	res.json(data);
 });
 
 module.exports = router;
