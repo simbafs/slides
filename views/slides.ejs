@@ -32,7 +32,7 @@
 			</a>
 
 			<% if(locals.id){ %>
-				<button class="btn-text sz:xl tooltip @right" data-tip="複製" data-clipboard-text="<%= id %>">
+				<button class="btn-text sz:xl tooltip @right clipboard" data-tip="複製" data-clipboard-text="<%= id %>">
 					ID: <%= id %>
 				</button>
 			<% } %>
@@ -165,14 +165,14 @@
 			<script src="/js/cookie.js"></script>
 			<script src="/js/clipboard.js"></script>
 			<script>
-				new ClipboardJS('.btn');
+				new ClipboardJS('.clipboard');
 			</script>
 			<script src="/js/hosts.js"></script>
 		<% }else if(locals.mode === 'audience'){ %>
 			<script src="/js/socket.io.js"></script>
 			<script src="/js/clipboard.js"></script>
 			<script>
-				new ClipboardJS('.btn');
+				new ClipboardJS('.clipboard');
 			</script>
 			<script src="/js/audience.js"></script>
 		<% } %>
