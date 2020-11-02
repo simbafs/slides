@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%- include('common/head.ejs') %>
+	</head>
+	<body>
+		<div class="container">
+			<!-- header -->
+			<%- include('common/header.ejs') %>
+
+			<!-- main -->
+			<div class="f-row f-align:c f-align:m">
+				<div class="f-col:10">
+					<% if(locals.admin){ %>
+						<h1>Admin</h1>
+
+					<% }else{ %>
+						<form class="form" action="/admin/login" method="post">
+							<label class="foem_label">
+								<h1>Key</h1>
+								<input class="input is:required" required type="password" name="password">
+							</label>
+							<button class="btn">Login</button>
+						</form>
+					<% } %>
+				</div>
+			</div>
+		</div>
+
+		<script src="/js/index.js"></script>
+	</body>
+</html>
