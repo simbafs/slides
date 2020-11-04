@@ -13,12 +13,29 @@
 				<div class="f-col:10">
 					<% if(locals.admin){ %>
 						<h1>Admin</h1>
-
+						<table class="table">
+							<thead>
+								<tr>
+									<td>Path</td>
+									<td>ID</td>
+									<td>Key</td>
+								</tr>
+							</thead>
+							<tbody>
+								<% for(let i of (locals.hosts || [])){ %>
+									<tr>
+										<td><%= i.path %></td>
+										<td><%= i.id %></td>
+										<td><%= i.key %></td>
+									</tr>
+								<% } %>
+							</tbody>
+						</table>
 					<% }else{ %>
 						<form class="form" action="/admin/login" method="post">
 							<label class="foem_label">
 								<h1>Key</h1>
-								<input class="input is:required" required type="password" name="password">
+								<input tabindex="1" class="input is:required" required type="password" name="key">
 							</label>
 							<button class="btn">Login</button>
 						</form>
