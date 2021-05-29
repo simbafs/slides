@@ -1,3 +1,4 @@
+const config = require('config');
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -32,7 +33,7 @@ app.use((req, res, next) => {
 	// path
 	res.locals.path = req.path.replace(/\/$/, '');
 	// Google Analystic
-	if(process.env.GA) res.locals.GA = process.env.GA;
+	if(config.has('GA')) res.locals.GA = config.get('GA');
 	next();
 });
 
